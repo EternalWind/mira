@@ -7,6 +7,9 @@ plugins {
     id 'groovy-gradle-plugin'
 }
 
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
+
 repositories {
     // Use the plugin portal to apply community plugins in convention plugins.
     gradlePluginPortal()
