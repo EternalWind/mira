@@ -3,8 +3,16 @@ plugins {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation project(':core')
+
+	implementation libs.spring.boot.starter.web
+	implementation libs.springdoc.openapi.ui
+	implementation libs.mapstruct
+
+	annotationProcessor libs.mapstruct.processor
+	annotationProcessor libs.lombok.mapstruct.binding
 	
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation libs.spring.boot.starter.test
+	testImplementation libs.bundles.testcontainers
+	testImplementation libs.testcontainers.mongodb
 }

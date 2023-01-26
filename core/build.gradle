@@ -1,0 +1,7 @@
+plugins {
+	id 'io.eternalwind.mira.java-library-conventions'
+}
+
+dependencies {
+	api libs.spring.boot.starter.data.mongodb
+}
