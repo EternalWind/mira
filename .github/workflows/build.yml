@@ -22,9 +22,3 @@ jobs:
 
     - name: Run build with Gradle Wrapper
       run: ./gradlew build --scan
-
-    - name: Upload build report
-      uses: actions/upload-artifact@v3
-      with:
-        name: build-reports
-        path: app/build/reports/
