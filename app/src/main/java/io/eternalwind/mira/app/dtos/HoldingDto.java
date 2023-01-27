@@ -3,6 +3,9 @@ package io.eternalwind.mira.app.dtos;
 import java.math.BigDecimal;
 import java.util.UUID;
 
+import lombok.experimental.UtilityClass;
+
+@UtilityClass
 public class HoldingDto {
     public static record Create(String ticker,
                                 String name,
@@ -23,6 +26,7 @@ public class HoldingDto {
     public static record Update(String ticker, 
                                 String name, 
                                 BigDecimal amount, 
+                                BigDecimal price,
                                 String sector) {
     }
 }
