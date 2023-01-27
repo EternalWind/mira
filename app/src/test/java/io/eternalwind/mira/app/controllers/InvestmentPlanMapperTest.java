@@ -86,7 +86,7 @@ public class InvestmentPlanMapperTest implements WithAssertions {
 
     @Test
     @SneakyThrows
-    void testFindByTicker() {
+    void testFindByName() {
         final InvestmentPlan plan1 = mock(InvestmentPlan.class);
 
         when(repository.findByNameContaining("plan1")).thenReturn(List.of(plan1));
