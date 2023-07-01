@@ -1,6 +1,65 @@
+plugins {
+    id("java")
+    id("org.springframework.boot") version "$springBootVersion" apply false
+    id("io.spring.dependency-management") version "$springDependencyManagementVersion"
+}
+
+allprojects {
+    apply plugin: "java"
+    apply plugin: "io.spring.dependency-management"
+
+    group = 'io.eternalwind'
+    version = '1.0.0-SNAPSHOT'
+
+    java {
+        sourceCompatibility = '17'
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES)
+            mavenBom("com.google.cloud:spring-cloud-gcp-dependencies:$springCloudGcpDependenciesVersion")
+        }
+
+        dependencies {
+            dependency "org.mapstruct:mapstruct:$mapstructVersion"
+            dependency "org.mapstruct:mapstruct-processor:$mapstructVersion"
+            dependency "org.springdoc:springdoc-openapi-starter-webmvc-ui:$springdocVersion"
+            dependency "org.projectlombok:lombok-mapstruct-binding:$lombokMapstructBindingVersion"
+        }
+    }
+
+    dependencies {
+        compileOnly 'org.projectlombok:lombok'
+        testCompileOnly 'org.projectlombok:lombok'
+        annotationProcessor 'org.projectlombok:lombok'
+        testAnnotationProcessor 'org.projectlombok:lombok'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    }
+
+    configurations {
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+
+        testCompileOnly {
+            extendsFrom testAnnotationProcessor
+        }
+    }
+
+    tasks.named('test') {
+        useJUnitPlatform()
+    }
+}
+
 if (hasProperty('buildScan')) {
     buildScan {
         termsOfServiceUrl = 'https://gradle.com/terms-of-service'
         termsOfServiceAgree = 'yes'
     }
 }
+

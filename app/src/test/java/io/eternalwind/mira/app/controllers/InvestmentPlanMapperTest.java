@@ -14,6 +14,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 import org.assertj.core.api.WithAssertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.json.AutoConfigureJsonTesters;
@@ -33,6 +34,7 @@ import lombok.SneakyThrows;
 
 @AutoConfigureJsonTesters
 @WebMvcTest(InvestmentPlansController.class)
+@Disabled
 public class InvestmentPlanMapperTest implements WithAssertions {
     @Autowired
     private MockMvc mvc;

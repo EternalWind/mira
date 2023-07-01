@@ -1,18 +1,12 @@
-plugins {
-	id 'io.eternalwind.mira.java-application-conventions'
-}
+apply plugin: "org.springframework.boot"
 
 dependencies {
 	implementation project(':core')
 
-	implementation libs.spring.boot.starter.web
-	implementation libs.springdoc.openapi.ui
-	implementation libs.mapstruct
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui'
+	implementation 'org.mapstruct:mapstruct'
 
-	annotationProcessor libs.mapstruct.processor
-	annotationProcessor libs.lombok.mapstruct.binding
-	
-	testImplementation libs.spring.boot.starter.test
-	testImplementation libs.bundles.testcontainers
-	testImplementation libs.testcontainers.mongodb
+	annotationProcessor 'org.mapstruct:mapstruct-processor'
+	annotationProcessor 'org.projectlombok:lombok-mapstruct-binding'
 }
