@@ -2,6 +2,7 @@ plugins {
     id("java")
     id("org.springframework.boot") version "$springBootVersion" apply false
     id("io.spring.dependency-management") version "$springDependencyManagementVersion"
+    id("com.google.cloud.tools.appengine") version "$gaePluginVersion" apply false
 }
 
 allprojects {

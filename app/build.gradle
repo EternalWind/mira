@@ -1,4 +1,20 @@
 apply plugin: "org.springframework.boot"
+apply plugin: "com.google.cloud.tools.appengine"
+
+appengine {
+	stage {
+		artifact = bootJar.archiveFile.get().asFile
+	}
+
+	deploy {
+		projectId = "GCLOUD_CONFIG"
+		version = "GCLOUD_CONFIG"
+	}
+}
+
+jar {
+    enabled = false
+}
 
 dependencies {
 	implementation project(':core')
