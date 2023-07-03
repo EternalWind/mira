@@ -16,3 +16,4 @@ rootProject.name = 'mira'
 
 include 'app'
 include 'core'
+include 'persistence'

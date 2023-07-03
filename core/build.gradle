@@ -1,5 +1,4 @@
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.apache.commons:commons-lang3'
-    implementation 'com.google.cloud:spring-cloud-gcp-starter-data-firestore'
+    implementation 'io.projectreactor:reactor-core'
 }

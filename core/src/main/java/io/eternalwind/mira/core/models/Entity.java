@@ -1,19 +1,23 @@
 package io.eternalwind.mira.core.models;
 
+import java.time.Instant;
 import java.util.UUID;
 
+import lombok.Builder;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.Value;
+import lombok.experimental.NonFinal;
 import lombok.experimental.SuperBuilder;
 
-@Getter
-@NoArgsConstructor
+@Value
+@NonFinal
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @SuperBuilder(toBuilder = true)
-@ToString
 public abstract class Entity {
+    @Builder.Default
     @EqualsAndHashCode.Include
-    private UUID id;
+    UUID id = UUID.randomUUID();
+
+    Instant createdTime;
+    Instant lastUpdatedTime;
 }
