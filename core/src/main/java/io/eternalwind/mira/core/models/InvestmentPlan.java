@@ -12,6 +12,6 @@ import lombok.experimental.SuperBuilder;
 public class InvestmentPlan extends Entity {
     public static record SectorWeight(String sector, double weight) {}
 
-    private String name;
-    private List<SectorWeight> sectorWeights;
+    String name;
+    List<SectorWeight> sectorWeights;
 }

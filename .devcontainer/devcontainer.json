@@ -11,7 +11,8 @@
 			"installMaven": "false",
 			"installGradle": "true"
 		},
-		"ghcr.io/dhoeric/features/google-cloud-cli:1": {}
+		"ghcr.io/dhoeric/features/google-cloud-cli:1": {},
+		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
 	},
 
 	"mounts": [
@@ -19,7 +20,7 @@
 	],
 
 	"containerEnv": {
-		"GOOGLE_APPLICATION_CREDENTIALS": "/dev/keys/my-portfolio-257714-71599ef012ee-gae-default.json"
+		"GOOGLE_APPLICATION_CREDENTIALS": "/dev/keys/mira-392912-a4e3824f81a7.json"
 	}
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.

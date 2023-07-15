@@ -33,6 +33,7 @@ allprojects {
             dependency "org.springdoc:springdoc-openapi-starter-webmvc-ui:$springdocVersion"
             dependency "org.projectlombok:lombok-mapstruct-binding:$lombokMapstructBindingVersion"
             dependency "org.assertj:assertj-core:$assertjVersion"
+            dependency "org.testcontainers:gcloud:$testcontainersVersion"
         }
     }
 
