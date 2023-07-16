@@ -1,10 +1,14 @@
 apply plugin: 'java-library'
 
 dependencies {
-    api project(':core')
+    implementation project(':core')
 
     implementation 'com.google.cloud:spring-cloud-gcp-starter-data-firestore'
     implementation 'org.mapstruct:mapstruct'
+
+    testImplementation 'org.testcontainers:testcontainers'
+	testImplementation 'org.testcontainers:junit-jupiter'
+	testImplementation 'org.testcontainers:gcloud'
 
 	annotationProcessor 'org.mapstruct:mapstruct-processor'
 	annotationProcessor 'org.projectlombok:lombok-mapstruct-binding'

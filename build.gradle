@@ -25,6 +25,7 @@ allprojects {
             mavenBom(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES)
             mavenBom("com.google.cloud:spring-cloud-gcp-dependencies:$springCloudGcpDependenciesVersion")
             mavenBom("io.projectreactor:reactor-bom:$reactorVersion")
+            mavenBom("org.testcontainers:testcontainers-bom:$testcontainersVersion")
         }
 
         dependencies {
@@ -33,7 +34,6 @@ allprojects {
             dependency "org.springdoc:springdoc-openapi-starter-webmvc-ui:$springdocVersion"
             dependency "org.projectlombok:lombok-mapstruct-binding:$lombokMapstructBindingVersion"
             dependency "org.assertj:assertj-core:$assertjVersion"
-            dependency "org.testcontainers:gcloud:$testcontainersVersion"
         }
     }
 
