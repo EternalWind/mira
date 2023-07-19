@@ -31,7 +31,7 @@ allprojects {
         dependencies {
             dependency "org.mapstruct:mapstruct:$mapstructVersion"
             dependency "org.mapstruct:mapstruct-processor:$mapstructVersion"
-            dependency "org.springdoc:springdoc-openapi-starter-webmvc-ui:$springdocVersion"
+            dependency "org.springdoc:springdoc-openapi-starter-webflux-ui:$springdocVersion"
             dependency "org.projectlombok:lombok-mapstruct-binding:$lombokMapstructBindingVersion"
             dependency "org.assertj:assertj-core:$assertjVersion"
         }
