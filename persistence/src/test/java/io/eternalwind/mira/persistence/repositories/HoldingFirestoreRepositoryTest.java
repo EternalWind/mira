@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
+import org.junit.jupiter.api.Test;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 import org.testcontainers.containers.FirestoreEmulatorContainer;
@@ -37,4 +38,12 @@ public class HoldingFirestoreRepositoryTest extends FirestoreRepositoryTestBase<
                 .build();
     }
 
+    @Test
+    void testGetByTicker() {
+        var expected = createEntity();
+        repository.save(expected).block();
+
+        var actual = repository.getByTicker(expected.getTicker()).block();
+        assertThat(actual).isEqualTo(expected);
+    }
 }

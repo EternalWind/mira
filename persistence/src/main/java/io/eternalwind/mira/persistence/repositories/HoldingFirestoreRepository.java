@@ -12,6 +12,8 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 public interface HoldingFirestoreRepository extends HoldingRepository, FirestoreReactiveRepository<HoldingDao> {
+    Mono<HoldingDao> findByTicker(String ticker);
+    
     default Mono<Holding> save(Holding entity) {
         var toSave = HoldingDaoMapper.INSTANCE.toDao(entity);
         return save(toSave).map(HoldingDaoMapper.INSTANCE::fromDao);
@@ -27,5 +29,9 @@ public interface HoldingFirestoreRepository extends HoldingRepository, Firestore
 
     default Mono<Void> remove(UUID id) {
         return deleteById(id.toString());
+    }
+
+    default Mono<Holding> getByTicker(String ticker) {
+        return findByTicker(ticker).map(HoldingDaoMapper.INSTANCE::fromDao);
     }
 }
